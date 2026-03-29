@@ -1,5 +1,4 @@
-import React, { use } from 'react'
-import{ useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import './App.css'
 import authService from './appwrite/auth'
@@ -21,14 +20,14 @@ function App() {
       }
     })
     .finally(() => setLoading(false))
-  }, [])
+  }, [dispatch])
 
   return !loading ? (
-  <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
-    <div className='w-full block'>
+  <div className='section-shell min-h-screen'>
+    <div className='relative z-10 flex min-h-screen flex-col'>
       <Header />
-      <main>
-        {/* <Outlet /> */}
+      <main className='flex-1 pb-12 pt-6 md:pt-10'>
+         <Outlet /> 
       </main>
       <Footer />
     </div>

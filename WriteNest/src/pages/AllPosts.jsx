@@ -5,23 +5,34 @@ import { PostCard, Container } from '../components'
 
 function AllPosts() {
     const [posts, setPosts] = useState([])
-    useEffect(() => {}, [])
-    service.getPosts([]).then((posts) => {
-        if (posts){
-            setPosts(posts.documents)
-        }
-    })
+
+    useEffect(() => {
+        service.getPosts([]).then((posts) => {
+            if (posts){
+                setPosts(posts.documents)
+            }
+        })
+    }, [])
+
     return (
-        <div className='py-8 w-full'>
+        <div className='w-full py-4 sm:py-8'>
             <Container>
-                <h1 className='text-3xl font-bold mb-8'>All Posts</h1>
-                <div className='flex flex-wrap -m-2'>
+                <section className='glass-panel rounded-[40px] px-6 py-10 sm:px-10'>
+                <div className='mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between'>
+                    <div>
+                        <p className='page-eyebrow'>Archive view</p>
+                        <h1 className='page-title mt-4 text-5xl text-slate-300'>All Posts</h1>
+                    </div>
+                    <p className='page-copy max-w-xl'>Review every article in your collection, whether active or inactive, from one clean dashboard.</p>
+                </div>
+                <div className='grid gap-5 md:grid-cols-2 xl:grid-cols-3'>
                     {posts.map((post) => (
-                        <div key={post.$id} className='p-2 w-1'>
-                            <PostCard post={post} />
+                        <div key={post.$id} className='h-full'>
+                            <PostCard {...post} />
                         </div>
                     ))}
                 </div>
+                </section>
             </Container>
         </div>
     )

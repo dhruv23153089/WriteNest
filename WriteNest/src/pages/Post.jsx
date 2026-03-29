@@ -33,34 +33,47 @@ export default function Post() {
     };
 
     return post ? (
-        <div className="py-8">
+        <div className="py-4 sm:py-8">
             <Container>
-                <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
-                    <img
-                        src={appwriteService.getFilePreview(post.featuredImage)}
-                        alt={post.title}
-                        className="rounded-xl"
-                    />
+                <article className="glass-panel rounded-[40px] overflow-hidden">
+                    <div className="relative overflow-hidden border-b border-[color:var(--line)] bg-[rgba(30,107,111,0.08)]">
+                        <img
+                            src={appwriteService.getFilePreview(post.featuredImage)}
+                            alt={post.title}
+                            className="aspect-[16/10] w-full object-cover"
+                            onError={(event) => {
+                                event.currentTarget.onerror = null;
+                                event.currentTarget.src = appwriteService.getFileView(post.featuredImage);
+                            }}
+                        />
 
-                    {isAuthor && (
-                        <div className="absolute right-6 top-6">
-                            <Link to={`/edit-post/${post.$id}`}>
-                                <Button bgColor="bg-green-500" className="mr-3">
-                                    Edit
+                        <div className="absolute inset-0 hidden bg-gradient-to-t from-[rgba(18,26,38,0.55)] via-transparent to-transparent sm:block" />
+
+                        {isAuthor && (
+                            <div className="absolute right-4 top-4 flex gap-2 sm:right-6 sm:top-6 sm:gap-3">
+                                <Link to={`/edit-post/${post.$id}`}>
+                                    <Button bgColor="bg-white/90" textColor="text-slate-900" className="px-4 py-2 sm:px-5 sm:py-3">
+                                        Edit
+                                    </Button>
+                                </Link>
+                                <Button bgColor="bg-[linear-gradient(135deg,#ef4444,#dc2626)]" className="px-4 py-2 sm:px-5 sm:py-3" onClick={deletePost}>
+                                    Delete
                                 </Button>
-                            </Link>
-                            <Button bgColor="bg-red-500" onClick={deletePost}>
-                                Delete
-                            </Button>
-                        </div>
-                    )}
-                </div>
-                <div className="w-full mb-6">
-                    <h1 className="text-2xl font-bold">{post.title}</h1>
-                </div>
-                <div className="browser-css">
-                    {parse(post.content)}
+                            </div>
+                        )}
                     </div>
+                    <div className="border-b border-[color:var(--line)] px-5 py-5 sm:px-10 sm:py-8">
+                        <p className="page-eyebrow">Article Detail</p>
+                        <h1 className="page-title mt-4 max-w-4xl break-words text-3xl text-slate-100 sm:text-4xl lg:text-5xl xl:text-6xl">
+                            {post.title}
+                        </h1>
+                    </div>
+                    <div className="px-6 py-8 sm:px-10 sm:py-10">
+                        <div className="browser-css prose max-w-none prose-headings:font-serif prose-headings:text-slate-100 prose-p:text-slate-200 prose-strong:text-white prose-li:text-slate-200">
+                            {parse(post.content)}
+                        </div>
+                    </div>
+                </article>
             </Container>
         </div>
     ) : null;

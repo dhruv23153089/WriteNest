@@ -2,3 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    color-scheme: light;
+    --page-bg: #0f0a0c;
+    --page-ink: #f7efef;
+    --muted-ink: #c5afb4;
+    --panel: rgba(24, 12, 15, 0.8);
+    --panel-strong: rgba(15, 8, 10, 0.92);
+    --line: rgba(255, 110, 110, 0.16);
+    --shadow-lg: 0 28px 70px rgba(0, 0, 0, 0.45);
+    --shadow-md: 0 18px 38px rgba(0, 0, 0, 0.32);
+    --accent: #ff4d5f;
+    --accent-deep: #c51f35;
+    --accent-soft: rgba(255, 77, 95, 0.14);
+    --teal: #8f1224;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(255, 77, 95, 0.28), transparent 24%),
+        radial-gradient(circle at top right, rgba(160, 25, 42, 0.22), transparent 24%),
+        radial-gradient(circle at 50% 20%, rgba(255, 196, 196, 0.06), transparent 28%),
+        linear-gradient(180deg, #160a0d 0%, #0c0507 52%, #080305 100%);
+    color: var(--page-ink);
+    font-family: "Segoe UI Variable", "Aptos", "Candara", "Segoe UI", sans-serif;
+}
+
+a {
+    color: inherit;
+}
+
+::selection {
+    background: rgba(255, 77, 95, 0.25);
+}
+
+#root {
+    min-height: 100vh;
+}
+
+.section-shell {
+    position: relative;
+}
+
+.section-shell::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 36px 36px;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 90%);
+    pointer-events: none;
+}
+
+.glass-panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(16px);
+}
+
+.glass-panel-strong {
+    background: var(--panel-strong);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(12px);
+}
+
+.page-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    background: var(--accent-soft);
+    color: #ff9ea7;
+    padding: 0.45rem 0.85rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.page-title {
+    font-family: "Constantia", "Palatino Linotype", Georgia, serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.page-copy {
+    color: var(--muted-ink);
+    line-height: 1.7;
+}

@@ -18,7 +18,7 @@ function Signup() {
             const userData = await authService.createAccount(data);
             if (userData) {
                 const userData = await authService.getCurrentUser();
-                if (userData) {dispatch(login(userData));}
+                if (userData) {dispatch(login({ userData }));}
                 navigate("/");
             }
         } catch (error) {
@@ -28,26 +28,26 @@ function Signup() {
 
 
     return (
-       <div className="flex items-center justify-center">
-            <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
-                <div className="mb-2 flex justify-center">
-                    <span className="inline-block w-full max-w-[100px]">
+       <div className="mx-auto grid w-full max-w-5xl gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+            <div className="glass-panel mx-auto w-full max-w-xl rounded-[36px] p-8 sm:p-10">
+                <div className="mb-6 flex justify-center">
+                    <span className="inline-block w-full max-w-[150px]">
                         <Logo width="100%" />
                     </span>
                 </div>
-                <h2 className="text-center text-2xl font-bold leading-tight">Sign up to create account</h2>
-                <p className="mt-2 text-center text-base text-black/60">
+                <h2 className="page-title text-center text-4xl leading-tight text-slate-400">Create your account</h2>
+                <p className="mt-3 text-center text-base text-slate-600">
                     Already have an account?&nbsp;
                     <Link
                         to="/login"
-                        className="font-medium text-primary transition-all duration-200 hover:underline"
+                        className="font-semibold text-[var(--accent-deep)] transition hover:underline"
                     >
                         Sign In
                     </Link>
                 </p>
-                {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+                {error && <p className="mt-8 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-center text-red-600">{error}</p>}
 
-                <form onSubmit={handleSubmit(create)} className="space-y-5">
+                <form onSubmit={handleSubmit(create)} className="mt-8 space-y-5">
                     <Input
                         label="Name: "
                         placeholder="Enter your name"
@@ -69,10 +69,29 @@ function Signup() {
                         placeholder="Enter your password"
                         {...register("password", { required: true })}
                     />
-                    <Button type="submit" className="w-full">
+                    <Button type="submit" className="w-full bg-[linear-gradient(135deg,var(--teal),#25545f)] text-white">
                         Create Account
                     </Button>
                 </form>
+            </div>
+            <div className='glass-panel hidden rounded-[36px] p-8 lg:flex lg:flex-col lg:justify-between'>
+                <div>
+                    <p className='page-eyebrow mb-6'>New here</p>
+                    <h1 className='page-title max-w-md text-5xl leading-tight text-slate-400'>Set up your writing hub and publish with less friction.</h1>
+                    <p className='page-copy mt-6 max-w-xl text-lg'>
+                        Start organizing drafts, uploading featured images, and shaping posts inside a cleaner publishing workflow.
+                    </p>
+                </div>
+                <div className='mt-12 grid gap-4 sm:grid-cols-2'>
+                    <div className='rounded-[24px] bg-white/60 p-5'>
+                        <p className='text-sm font-semibold uppercase tracking-[0.2em] text-slate-900'>Draft</p>
+                        <p className='mt-2 text-lg font-semibold text-slate-700'>Build posts with title, image, and body content.</p>
+                    </div>
+                    <div className='rounded-[24px] bg-white/60 p-5'>
+                        <p className='text-sm font-semibold uppercase tracking-[0.2em] text-slate-900'>Publish</p>
+                        <p className='mt-2 text-lg font-semibold text-slate-700'>Manage status, edit details later, and keep your library tidy.</p>
+                    </div>
+                </div>
             </div> 
         </div>
     )

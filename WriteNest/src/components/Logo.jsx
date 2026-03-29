@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Logo({width = "100px"}) {
+    const [imageError, setImageError] = useState(false);
+
     return (
-        <div>Logo</div>
+        <div
+            className="inline-flex items-center justify-center text-lg font-bold text-white"
+            style={{ width }}
+        >
+            {!imageError ? (
+                <div className="aspect-[3/2] w-full">
+                    <img
+                        src="/logo.png"
+                        alt="WriteNest"
+                        className="h-full w-full object-contain"
+                        onError={() => setImageError(true)}
+                    />
+                </div>
+            ) : (
+                "WriteNest"
+            )}
+        </div>
     )
 }
 
