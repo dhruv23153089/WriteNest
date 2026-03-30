@@ -12,6 +12,7 @@ import AuthLayout from "./AuthLayout";
 import Button from "./Button";
 import Input from "./Input";
 import Select from "./Select";
+import ChatBot from "./ChatBot";
 
 export {    
     Header,
@@ -28,4 +29,5 @@ export {
     Button,
     Input,
     Select,
+    ChatBot,
 }

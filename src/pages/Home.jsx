@@ -8,16 +8,19 @@ function Home() {
     const authStatus = useSelector((state) => state.auth.status)
 
     useEffect(() => {
-        if (!authStatus) {
-            setPosts([])
-            return
-        }
-
-        service.getPosts().then((posts) => {
-            if (posts){
-                setPosts(posts.documents)
-            }
-        })
+        service
+            .getPosts()
+            .then((response) => {
+                if (response && response.documents) {
+                    setPosts(response.documents)
+                } else {
+                    setPosts([])
+                }
+            })
+            .catch((error) => {
+                console.log("Error fetching posts:", error)
+                setPosts([])
+            })
     }, [authStatus])
 
     if(posts.length === 0){
@@ -30,7 +33,7 @@ function Home() {
                         <p className='page-copy mt-4 max-w-2xl text-lg'>
                             {authStatus
                                 ? 'Once you create your first article, it will show up here as part of your featured collection.'
-                                : 'Log in to view your writing library and manage published posts.'}
+                                : 'Published posts appear here for everyone. Log in to manage your full writing library and drafts.'}
                         </p>
                     </div>
                 </Container>

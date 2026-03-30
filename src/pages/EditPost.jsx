@@ -14,7 +14,7 @@ function EditPost() {
                 if(post){
                     setPost(post)
                 }else
-                    navigate("/404")
+                    navigate("/")
             })
         }
     }, [slug, navigate])
