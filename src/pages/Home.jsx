@@ -29,8 +29,8 @@ function Home() {
                 <Container>
                     <div className='glass-panel rounded-[36px] px-6 py-10 sm:px-10'>
                         <p className='page-eyebrow'>Your feed</p>
-                        <h1 className='page-title mt-5 text-5xl text-slate-100'>No posts yet</h1>
-                        <p className='page-copy mt-4 max-w-2xl text-lg'>
+                        <h1 className='page-title mt-5 text-4xl text-slate-100 sm:text-5xl'>No posts yet</h1>
+                        <p className='page-copy mt-4 max-w-2xl text-base sm:text-lg'>
                             {authStatus
                                 ? 'Once you create your first article, it will show up here as part of your featured collection.'
                                 : 'Published posts appear here for everyone. Log in to manage your full writing library and drafts.'}
@@ -47,7 +47,7 @@ function Home() {
                     <div className='mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between'>
                         <div>
                             <p className='page-eyebrow'>Freshly published</p>
-                            <h1 className='page-title mt-4 max-w-3xl text-4xl text-slate-300 sm:text-4xl'>Your writing library, presented with more breathing room.</h1>
+                            <h1 className='page-title mt-4 max-w-3xl text-3xl text-slate-300 sm:text-4xl'>Your writing library, presented with more breathing room.</h1>
                         </div>
                         <p className='page-copy max-w-xl text-base sm:text-lg'>Browse the latest active stories, open a post to edit details, and keep the collection feeling like a curated editorial space.</p>
                     </div>

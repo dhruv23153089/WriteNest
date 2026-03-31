@@ -26,13 +26,13 @@ function Login() {
         }
     }
     return (
-        <div className='py-8'>
+        <div className='py-6 sm:py-8'>
         <div className='mx-auto grid w-full max-w-5xl gap-8 lg:grid-cols-[1.05fr_0.95fr]'>
             <div className='glass-panel hidden rounded-[36px] p-8 lg:flex lg:flex-col lg:justify-between'>
                 <div>
                     <p className='page-eyebrow mb-6'>Welcome Back</p>
-                    <h1 className='page-title max-w-md text-5xl leading-tight text-slate-400'>A softer workspace for drafting and publishing your writing.</h1>
-                    <p className='page-copy mt-6 max-w-xl text-lg'>
+                    <h1 className='page-title max-w-md text-4xl leading-tight text-slate-400 xl:text-5xl'>A softer workspace for drafting and publishing your writing.</h1>
+                    <p className='page-copy mt-6 max-w-xl text-base sm:text-lg'>
                         Sign in to continue managing posts, refining drafts, and keeping your writing organized in one place.
                     </p>
                 </div>
@@ -41,13 +41,13 @@ function Login() {
                     <p className='mt-3 text-base leading-7 text-slate-500'>Create posts, revisit old ideas, and keep your publishing flow steady without leaving the same dashboard.</p>
                 </div>
             </div>
-            <div className='glass-panel mx-auto w-full max-w-xl rounded-[36px] p-8 sm:p-10'>
+            <div className='glass-panel mx-auto w-full max-w-xl rounded-[36px] p-6 sm:p-10'>
                 <div className="mb-6 flex justify-center">
                     <span className="inline-block w-full max-w-[150px]">
                         <Logo width="100%" />
                     </span>
                 </div>
-                <h2 className="page-title text-center text-4xl leading-tight text-slate-400">Sign in to your account</h2>
+                <h2 className="page-title text-center text-3xl leading-tight text-slate-400 sm:text-4xl">Sign in to your account</h2>
                 <p className="mt-3 text-center text-base text-slate-600">
                     Don&apos;t have any account?&nbsp;
                     <Link

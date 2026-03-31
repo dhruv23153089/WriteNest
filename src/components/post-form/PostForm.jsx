@@ -88,7 +88,7 @@ export default function PostForm({post}) {
             <div className="glass-panel rounded-[36px] p-5 sm:p-7">
                 <div className="mb-6">
                     <p className="page-eyebrow">{post ? "Edit story" : "Compose story"}</p>
-                    <h2 className="page-title mt-4 text-4xl text-slate-300">{post ? "Polish your post details" : "Shape your next article"}</h2>
+                    <h2 className="page-title mt-4 text-3xl text-slate-300 sm:text-4xl">{post ? "Polish your post details" : "Shape your next article"}</h2>
                     <p className="page-copy mt-3 max-w-2xl">Keep the content workflow exactly the same, now with a calmer writing surface and a clearer publishing sidebar.</p>
                 </div>
                 <div className="space-y-5">

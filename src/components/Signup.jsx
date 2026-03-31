@@ -29,13 +29,13 @@ function Signup() {
 
     return (
        <div className="mx-auto grid w-full max-w-5xl gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-            <div className="glass-panel mx-auto w-full max-w-xl rounded-[36px] p-8 sm:p-10">
+            <div className="glass-panel mx-auto w-full max-w-xl rounded-[36px] p-6 sm:p-10">
                 <div className="mb-6 flex justify-center">
                     <span className="inline-block w-full max-w-[150px]">
                         <Logo width="100%" />
                     </span>
                 </div>
-                <h2 className="page-title text-center text-4xl leading-tight text-slate-400">Create your account</h2>
+                <h2 className="page-title text-center text-3xl leading-tight text-slate-400 sm:text-4xl">Create your account</h2>
                 <p className="mt-3 text-center text-base text-slate-600">
                     Already have an account?&nbsp;
                     <Link
@@ -77,8 +77,8 @@ function Signup() {
             <div className='glass-panel hidden rounded-[36px] p-8 lg:flex lg:flex-col lg:justify-between'>
                 <div>
                     <p className='page-eyebrow mb-6'>New here</p>
-                    <h1 className='page-title max-w-md text-5xl leading-tight text-slate-400'>Set up your writing hub and publish with less friction.</h1>
-                    <p className='page-copy mt-6 max-w-xl text-lg'>
+                    <h1 className='page-title max-w-md text-4xl leading-tight text-slate-400 xl:text-5xl'>Set up your writing hub and publish with less friction.</h1>
+                    <p className='page-copy mt-6 max-w-xl text-base sm:text-lg'>
                         Start organizing drafts, uploading featured images, and shaping posts inside a cleaner publishing workflow.
                     </p>
                 </div>

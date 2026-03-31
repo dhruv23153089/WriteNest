@@ -1,10 +1,12 @@
 import React from 'react'
-import {Login as LoginComponent} from '../components'
+import {Container, Login as LoginComponent} from '../components'
 
 function Login() {
     return (
-        <div className='py-8'>
-            <LoginComponent />
+        <div className='py-6 sm:py-8'>
+            <Container>
+                <LoginComponent />
+            </Container>
         </div>
     )
 }

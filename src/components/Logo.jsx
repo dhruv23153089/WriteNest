@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
-function Logo({width = "100px"}) {
+function Logo({width = "100px", className = ""}) {
     const [imageError, setImageError] = useState(false);
 
     return (
         <div
-            className="inline-flex items-center justify-center text-lg font-bold text-white"
+            className={`inline-flex items-center justify-center text-lg font-bold text-white ${className}`}
             style={{ width }}
         >
             {!imageError ? (
