@@ -62,20 +62,20 @@ function Header() {
     return (
         <header className='sticky top-0 z-30 px-3 pt-3 sm:px-5'>
             <Container>
-                <nav className='glass-panel-strong grid gap-4 rounded-[28px] px-4 py-4 sm:px-5 md:grid-cols-[auto_1fr] md:items-center md:px-7'>
+                <nav className='glass-panel-strong grid gap-4 rounded-[28px] px-3 py-3 sm:px-5 sm:py-4 md:grid-cols-[auto_1fr] md:items-center md:px-7'>
                     <div className='flex items-center justify-between gap-3 sm:flex-row sm:items-center sm:justify-between'>
                         <div className='flex min-w-0 items-center gap-2 sm:gap-4'>
                             <Link to='/'>
-                                <Logo width='92px'/>
+                                <Logo width='78px'/>
                             </Link>
-                            <div className='page-eyebrow hidden min-w-0 max-w-[8.5rem] px-3 py-2 text-[0.6rem] leading-none sm:inline-flex sm:max-w-none sm:text-[0.68rem]'>
+                            <div className='page-eyebrow hidden min-w-0 max-w-[8.5rem] px-3 py-2 text-[0.6rem] leading-none md:inline-flex md:max-w-none md:text-[0.68rem]'>
                                 <span className='truncate'>Create without limits</span>
                             </div>
                         </div>
                         <button
                             type='button'
                             onClick={() => setIsMenuOpen((prev) => !prev)}
-                            className='inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[color:var(--line)] text-sm font-semibold text-slate-100 transition hover:bg-white/10 md:hidden'
+                            className='inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[color:var(--line)] text-sm font-semibold text-slate-100 transition hover:bg-white/10 md:hidden'
                             aria-expanded={isMenuOpen}
                             aria-label='Toggle navigation menu'
                         >
@@ -92,7 +92,7 @@ function Header() {
                             </span>
                         </button>
                     </div>
-                    <ul className={`${isMenuOpen ? 'flex' : 'hidden'} flex-col gap-2 md:flex md:flex-row md:flex-wrap md:items-center md:justify-end`}>
+                    <ul className={`${isMenuOpen ? 'flex' : 'hidden'} flex-col gap-2 pt-1 md:flex md:flex-row md:flex-wrap md:items-center md:justify-end md:pt-0`}>
                       {navItems.map((item) =>
                         item.active ? (
                             <li key={item.name}>

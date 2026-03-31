@@ -13,6 +13,7 @@ import Button from "./Button";
 import Input from "./Input";
 import Select from "./Select";
 import ChatBot from "./ChatBot";
+import AuthShell from "./AuthShell";
 
 export {    
     Header,
@@ -30,4 +31,5 @@ export {
     Input,
     Select,
     ChatBot,
+    AuthShell,
 }

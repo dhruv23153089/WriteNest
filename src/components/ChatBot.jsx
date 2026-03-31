@@ -111,17 +111,17 @@ export default function ChatBot() {
   };
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 z-50 sm:bottom-6 sm:left-auto sm:right-6">
+    <div className="fixed bottom-4 right-4 z-50 sm:bottom-6 sm:right-6">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-red-600 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-red-600 text-base font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl sm:h-14 sm:w-14 sm:text-lg"
         title="WriteNest Assistant"
       >
         {isOpen ? 'X' : 'AI'}
       </button>
 
       {isOpen && (
-        <div className="absolute bottom-20 left-0 right-0 flex max-h-[min(70vh,32rem)] flex-col overflow-hidden rounded-3xl border border-orange-500/20 bg-gray-900 shadow-2xl sm:left-auto sm:w-[24rem] md:max-h-[500px] md:w-[26rem]">
+        <div className="absolute bottom-20 right-0 flex w-[min(24rem,calc(100vw-2rem))] max-h-[min(70vh,32rem)] flex-col overflow-hidden rounded-3xl border border-orange-500/20 bg-gray-900 shadow-2xl md:max-h-[500px] md:w-[26rem]">
           <div className="rounded-t-lg bg-gradient-to-r from-orange-500 to-red-600 p-4 text-white">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
               <div>
